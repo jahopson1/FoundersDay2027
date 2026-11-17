@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Our Story, Our Future · Founders Day 2027 · Chicago Alumni Association of Phi Kappa Psi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cardinal:#8E1B2B;
+    --cardinal-dk:#6E1220;
+    --green:#1D3A2A;
+    --green-dk:#132A1E;
+    --gold:#C2A060;
+    --cream:#F7F2E8;
+    --paper:#FFFDF8;
+    --ink:#1E1E1C;
+    --muted:#5E5A52;
+    --line:#E3DACA;
+    --chi-blue:#41B6E6;
+    --chi-sky:#E3F2FA;
+    --chi-red:#E4002B;
+    --serif:"Cormorant Garamond", Georgia, serif;
+    --sans:"Source Sans 3", system-ui, -apple-system, sans-serif;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0}
+  body{font-family:var(--sans);color:var(--ink);background:var(--cream);line-height:1.6;font-size:17px;-webkit-font-smoothing:antialiased}
+  a{color:var(--cardinal)}
+  img{max-width:100%}
+
+  /* ---------- Nav ---------- */
+  header.site{position:sticky;top:0;z-index:20;background:var(--green-dk);color:var(--cream);border-bottom:3px solid var(--chi-blue)}
+  .nav{max-width:1120px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:12px 24px;gap:16px}
+  .brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:inherit}
+  .mono{font-family:var(--serif);font-weight:700;font-size:22px;letter-spacing:2px;color:var(--gold);border:1.5px solid var(--gold);padding:2px 9px 0;border-radius:3px;line-height:1.3}
+  .brand-text{display:flex;flex-direction:column;line-height:1.15}
+  .brand-text b{font-weight:600;font-size:15px;letter-spacing:.3px}
+  .brand-text span{font-size:12px;opacity:.7;letter-spacing:1.5px;text-transform:uppercase}
+  nav.links{display:flex;gap:4px}
+  nav.links a{color:var(--cream);text-decoration:none;font-weight:500;font-size:15px;padding:8px 14px;border-radius:4px;opacity:.85}
+  nav.links a:hover{opacity:1;background:rgba(255,255,255,.07)}
+  nav.links a.active{opacity:1;background:var(--cardinal)}
+  .menu-btn{display:none;background:none;border:1px solid rgba(255,255,255,.3);color:var(--cream);border-radius:4px;padding:6px 10px;font:inherit;cursor:pointer}
+
+  /* ---------- Views ---------- */
+  .view{display:none}
+  .view.on{display:block;animation:fade .35s ease}
+  @keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+
+  .wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+  section.block{padding:72px 0}
+  .eyebrow{font-size:13px;letter-spacing:3px;text-transform:uppercase;font-weight:600;color:var(--cardinal)}
+  .eyebrow::before{content:"";display:inline-block;width:13px;height:13px;margin-right:9px;vertical-align:-2px;background:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%22-10%20-10%2020%2020%22%3E%3Cpath%20fill%3D%22%23E4002B%22%20d%3D%22M0.00%2C-10.00%20L2.00%2C-3.46%20L8.66%2C-5.00%20L4.00%2C0.00%20L8.66%2C5.00%20L2.00%2C3.46%20L0.00%2C10.00%20L-2.00%2C3.46%20L-8.66%2C5.00%20L-4.00%2C0.00%20L-8.66%2C-5.00%20L-2.00%2C-3.46Z%22/%3E%3C/svg%3E") center/contain no-repeat}
+  .stars{display:flex;gap:10px;justify-content:center}
+  .stars svg{width:20px;height:20px;fill:var(--chi-red)}
+  .stars.sm svg{width:14px;height:14px}
+  .stars.left{justify-content:flex-start;margin-bottom:18px}
+  h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.1;margin:0}
+  h2{font-size:clamp(34px,4.4vw,48px);color:var(--green)}
+  h3{font-size:26px;color:var(--green)}
+  .lede{font-size:19px;color:var(--muted);max-width:640px}
+
+  /* ---------- Hero ---------- */
+  .hero{background:
+      radial-gradient(1200px 500px at 85% -10%, rgba(142,27,43,.55), transparent 60%),
+      linear-gradient(180deg,var(--green-dk),var(--green));
+    color:var(--cream);position:relative;overflow:hidden}
+  .hero::after{content:"";position:absolute;inset:auto 0 0 0;height:16px;background:linear-gradient(180deg,var(--chi-blue) 0 6px,var(--cream) 6px 10px,var(--chi-blue) 10px 16px)}
+  .sky{position:absolute;left:0;right:0;bottom:16px;width:100%;height:150px;fill:#0C1F15;opacity:.9;pointer-events:none}
+  .hero-inner{position:relative;z-index:1;max-width:1120px;margin:0 auto;padding:96px 24px 190px;display:grid;grid-template-columns:1.35fr 1fr;gap:56px;align-items:center}
+  .hero .eyebrow{color:var(--gold)}
+  .hero h1{font-size:clamp(50px,7vw,88px);margin:14px 0 4px;letter-spacing:-.5px}
+  .hero h1 em{font-style:italic;color:var(--gold);font-weight:500}
+  .hero .tagline{font-family:var(--serif);font-style:italic;font-size:clamp(24px,2.6vw,30px);color:var(--gold);margin:0 0 18px}
+  .local-theme{display:inline-flex;align-items:center;gap:12px;margin:0 0 28px;padding:8px 16px 8px 14px;border-left:3px solid var(--chi-blue);background:rgba(65,182,230,.1);text-decoration:none;color:var(--cream);border-radius:0 4px 4px 0}
+  .local-theme span{font-size:12px;letter-spacing:2px;text-transform:uppercase;opacity:.75}
+  .local-theme b{font-family:var(--serif);font-size:22px;font-weight:600;color:var(--gold)}
+  .hero .sub{font-size:21px;opacity:.88;max-width:560px;margin:0 0 30px}
+  .facts{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:34px}
+  .fact{border:1px solid rgba(247,242,232,.25);border-radius:999px;padding:7px 16px;font-size:15px;background:rgba(0,0,0,.12)}
+  .fact b{color:var(--gold);font-weight:600;margin-right:6px}
+  .ctas{display:flex;flex-wrap:wrap;gap:12px}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 24px;border-radius:4px;font-weight:600;font-size:16px;text-decoration:none;cursor:pointer;border:2px solid transparent;font-family:var(--sans);transition:transform .12s ease, background .15s ease}
+  .btn:hover{transform:translateY(-1px)}
+  .btn-red{background:var(--cardinal);color:#fff}
+  .btn-red:hover{background:var(--cardinal-dk)}
+  .btn-ghost{border-color:rgba(247,242,232,.5);color:var(--cream);background:transparent}
+  .btn-ghost:hover{background:rgba(255,255,255,.08)}
+  .btn-green{background:var(--green);color:#fff}
+  .btn-green:hover{background:var(--green-dk)}
+  .btn[aria-disabled="true"]{background:#CFC7B8;color:#6b665d;cursor:not-allowed;transform:none}
+
+  .seal{justify-self:center;width:min(360px,100%);aspect-ratio:1;border-radius:50%;border:2px solid rgba(194,160,96,.6);display:grid;place-items:center;position:relative;text-align:center;background:radial-gradient(circle,rgba(0,0,0,.18),transparent 70%)}
+  .seal::before{content:"";position:absolute;inset:14px;border-radius:50%;border:1px dashed rgba(194,160,96,.45)}
+  .seal .yrs{font-family:var(--serif);font-size:clamp(96px,13vw,150px);font-weight:700;line-height:.9;color:var(--cream)}
+  .seal .lbl{font-size:13px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-top:6px}
+  .seal .span{font-family:var(--serif);font-style:italic;font-size:20px;opacity:.8;margin-top:6px}
+
+  /* ---------- Countdown ---------- */
+  .countdown{background:var(--chi-sky);border-bottom:6px solid var(--chi-blue)}
+  .cd .stars svg{width:16px;height:16px}
+  .cd{max-width:1120px;margin:0 auto;padding:22px 24px;display:flex;align-items:center;justify-content:center;gap:28px;flex-wrap:wrap}
+  .cd-label{font-size:13px;letter-spacing:2.5px;text-transform:uppercase;color:var(--muted);font-weight:600}
+  .cd-units{display:flex;gap:22px}
+  .cd-u{text-align:center;min-width:56px}
+  .cd-u b{display:block;font-family:var(--serif);font-size:38px;color:var(--cardinal);line-height:1}
+  .cd-u span{font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted)}
+
+  /* ---------- Cards / grids ---------- */
+  .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+  .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .card{background:var(--paper);border:1px solid var(--line);border-radius:6px;padding:28px}
+  .details{list-style:none;padding:0;margin:0}
+  .details li{display:grid;grid-template-columns:110px 1fr;gap:16px;padding:16px 0;border-bottom:1px solid var(--line)}
+  .details li:last-child{border-bottom:none}
+  .details .k{font-size:13px;letter-spacing:2px;text-transform:uppercase;color:var(--cardinal);font-weight:700;padding-top:2px}
+  .details .v b{display:block;font-weight:600}
+  .details .v span{color:var(--muted);font-size:15px}
+  .tbd{display:inline-block;font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;background:#F1E6CF;color:#7A5A1C;border-radius:3px;padding:1px 7px;vertical-align:2px}
+
+  .pillar{border-top:3px solid var(--cardinal);padding-top:18px}
+  .pillar .n{font-family:var(--serif);font-size:44px;color:var(--gold);line-height:1;font-weight:700}
+  .pillar h3{margin:8px 0 8px;font-size:24px}
+  .pillar p{margin:0;color:var(--muted)}
+
+  .standard{background:var(--chi-sky);border-top:6px solid var(--chi-blue);border-bottom:6px solid var(--chi-blue);position:relative}
+  .standard-head{display:grid;grid-template-columns:1fr 1.1fr;gap:48px;align-items:end;margin-bottom:44px}
+  .standard-head p{margin:0}
+  .commit{background:var(--paper);border:1px solid #CFE6F2;border-radius:6px;padding:30px 28px;position:relative}
+  .commit .star-n{display:flex;align-items:center;gap:10px;margin-bottom:14px}
+  .commit .star-n svg{width:26px;height:26px;fill:var(--chi-red)}
+  .commit .star-n span{font-size:12px;letter-spacing:2.5px;text-transform:uppercase;font-weight:700;color:var(--muted)}
+  .commit h3{font-size:27px;margin-bottom:10px}
+  .commit p{margin:0;color:var(--muted)}
+  @media (max-width:860px){.standard-head{grid-template-columns:1fr;gap:16px}}
+  .sched{list-style:none;padding:0;margin:0;border-left:2px solid var(--line)}
+  .sched li{display:grid;grid-template-columns:96px 1fr;gap:16px;padding:0 0 26px 22px;position:relative}
+  .sched li::before{content:"";position:absolute;left:-7px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--cardinal);box-shadow:0 0 0 4px var(--cream)}
+  .sched li:last-child{padding-bottom:0}
+  .sched .t{font-weight:700;color:var(--cardinal);font-size:15px;letter-spacing:.5px;padding-top:1px}
+  .sched b{display:block;font-size:18px}
+  .sched span{color:var(--muted)}
+  .speaker{background:var(--green);color:var(--cream);border-radius:6px;padding:36px;position:relative;overflow:hidden}
+  .speaker::after{content:"";position:absolute;inset:auto 0 0 0;height:10px;background:linear-gradient(180deg,var(--chi-blue) 0 3px,var(--green) 3px 7px,var(--chi-blue) 7px 10px)}
+  .speaker .eyebrow{color:var(--gold)}
+  .sp-row{display:flex;gap:20px;align-items:center;margin:20px 0 20px}
+  .sp-mono{flex:none;width:84px;height:84px;border-radius:50%;border:2px solid var(--gold);display:grid;place-items:center;font-family:var(--serif);font-size:32px;font-weight:700;color:var(--gold)}
+  .sp-photo{flex:none;width:112px;height:112px;border-radius:50%;object-fit:cover;object-position:center 20%;border:3px solid var(--gold)}
+  .speaker.wide{display:grid;grid-template-columns:auto 1fr;gap:12px 40px;align-items:center;padding:40px 44px 46px}
+  .speaker.wide .eyebrow{grid-column:1/-1}
+  .speaker.wide .sp-row{margin:0}
+  .speaker.wide .sp-photo{width:140px;height:140px}
+  .speaker.wide h3{font-size:42px}
+  .speaker.wide p{font-size:19px;max-width:440px}
+  @media (max-width:860px){.speaker.wide{grid-template-columns:1fr;padding:32px}}
+  .speaker h3{color:var(--cream);font-size:34px}
+  .sp-title{font-weight:600;margin-top:4px}
+  .sp-chap{color:var(--gold);font-size:15px}
+  .speaker p{margin:0;opacity:.85}
+  @media (max-width:860px){.sched li{grid-template-columns:1fr;gap:2px}}
+  .band{background:var(--green);color:var(--cream)}
+  .band h2{color:var(--cream)}
+  .band .lede{color:rgba(247,242,232,.8)}
+  .quote{font-family:var(--serif);font-style:italic;font-size:clamp(26px,3vw,34px);line-height:1.3;color:var(--cream);margin:0}
+  .quote-by{margin-top:14px;color:var(--gold);font-size:14px;letter-spacing:2px;text-transform:uppercase}
+
+  .page-head{background:var(--green);color:var(--cream);padding:64px 0 120px;position:relative;overflow:hidden}
+  .page-head::after{content:"";position:absolute;inset:auto 0 0 0;height:12px;background:linear-gradient(180deg,var(--chi-blue) 0 4px,var(--cream) 4px 8px,var(--chi-blue) 8px 12px)}
+  .page-head .sky{height:90px;bottom:12px;opacity:.75}
+  .page-head .wrap{position:relative;z-index:1}
+  .page-head .eyebrow{color:var(--gold)}
+  .page-head h1{font-size:clamp(42px,6vw,64px);margin:10px 0 10px}
+  .page-head p{margin:0;max-width:640px;font-size:19px;opacity:.85}
+
+  /* ---------- Register ---------- */
+  .steps{counter-reset:s;list-style:none;padding:0;margin:24px 0 0}
+  .steps li{counter-increment:s;position:relative;padding:0 0 22px 56px}
+  .steps li::before{content:counter(s);position:absolute;left:0;top:-2px;width:38px;height:38px;border-radius:50%;background:var(--cardinal);color:#fff;font-family:var(--serif);font-weight:700;font-size:22px;display:grid;place-items:center}
+  .steps b{display:block;font-size:18px}
+  .steps span{color:var(--muted)}
+  .price{font-family:var(--serif);font-size:56px;color:var(--cardinal);font-weight:700;line-height:1}
+  .tier{display:flex;align-items:baseline;gap:14px;padding:6px 0}
+  .price .note{font-family:var(--sans);font-weight:400;line-height:1.5;font-size:14px}
+  .tier .tl{font-family:var(--sans);font-size:16px;color:var(--muted);font-weight:500}
+  .price small{font-family:var(--sans);font-size:15px;color:var(--muted);font-weight:500;margin-left:6px}
+  .note{font-size:14px;color:var(--muted);margin-top:14px}
+
+  /* ---------- Attendees ---------- */
+  .att-tools{display:flex;gap:14px;align-items:center;justify-content:space-between;flex-wrap:wrap;margin-bottom:24px}
+  .stat{display:flex;gap:28px}
+  .stat div b{display:block;font-family:var(--serif);font-size:42px;color:var(--cardinal);line-height:1}
+  .stat div span{font-size:13px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted)}
+  input[type=search]{font:inherit;padding:11px 14px;border:1px solid var(--line);border-radius:4px;background:var(--paper);min-width:260px}
+  input[type=search]:focus{outline:2px solid var(--green);outline-offset:1px}
+  .att-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px}
+  .att{background:var(--paper);border:1px solid var(--line);border-left:4px solid var(--green);border-radius:4px;padding:14px 16px}
+  .att b{display:block;font-size:17px}
+  .att span{font-size:14px;color:var(--muted)}
+  .att .g{display:inline-block;margin-top:4px;font-size:12px;font-weight:600;color:var(--cardinal)}
+  .empty{text-align:center;padding:64px 24px;background:var(--paper);border:1px dashed var(--line);border-radius:6px}
+  .empty h3{margin-bottom:8px}
+  .empty p{color:var(--muted);margin:0 0 22px}
+  .updated{font-size:14px;color:var(--muted);margin-top:22px}
+
+  /* ---------- Awards ---------- */
+  .award{background:var(--paper);border:1px solid var(--line);border-radius:6px;padding:30px;display:flex;flex-direction:column;position:relative;overflow:hidden}
+  .award::before{content:"";position:absolute;top:0;left:0;right:0;height:5px;background:linear-gradient(90deg,var(--cardinal),var(--gold))}
+  .award .who{font-size:12px;letter-spacing:2px;text-transform:uppercase;font-weight:700;color:var(--cardinal)}
+  .award h3{margin:10px 0 10px}
+  .award p{color:var(--muted);margin:0 0 22px;flex:1}
+  .award .btn{align-self:flex-start}
+  .deadline{background:#F1E6CF;border:1px solid #E2CFA6;border-radius:6px;padding:16px 20px;margin-bottom:32px;color:#5A4216}
+
+  /* ---------- Footer ---------- */
+  .foot-sky{display:block;width:100%;height:110px;fill:var(--green-dk);margin-bottom:-1px}
+  footer{background:var(--green-dk);color:rgba(247,242,232,.75);padding:40px 0;font-size:15px}
+  footer .wrap{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
+  footer b{color:var(--cream)}
+  footer a{color:var(--gold)}
+
+  @media (max-width:860px){
+    .hero-inner{grid-template-columns:1fr;padding:64px 24px 140px}
+    .sky{height:100px}
+    .seal{width:240px}
+    .grid-2,.grid-3{grid-template-columns:1fr}
+    .menu-btn{display:block}
+    nav.links{display:none;position:absolute;top:100%;left:0;right:0;background:var(--green-dk);flex-direction:column;padding:8px 16px 16px;border-bottom:3px solid var(--cardinal)}
+    nav.links.open{display:flex}
+    .brand-text span{display:none}
+    section.block{padding:52px 0}
+    .details li{grid-template-columns:1fr;gap:2px}
+  }
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="star" viewBox="-10 -10 20 20"><path d="M0.00,-10.00 L2.00,-3.46 L8.66,-5.00 L4.00,0.00 L8.66,5.00 L2.00,3.46 L0.00,10.00 L-2.00,3.46 L-8.66,5.00 L-4.00,0.00 L-8.66,-5.00 L-2.00,-3.46Z"/></symbol>
+  <symbol id="skyline" viewBox="0 0 1440 170" preserveAspectRatio="none"><path d="M0 131h26v39h-26Z M24 136h18v34h-18Z M40 117h18v53h-18Z M56 127h34v43h-34Z M64.5 113h17.0v57h-17.0Z M88 136h30v34h-30Z M95.5 120h15.0v50h-15.0Z M116 137h30v33h-30Z M144 126h18v44h-18Z M160 137h34v33h-34Z M192 137h30v33h-30Z M220 105h18v65h-18Z M236 114h26v56h-26Z M242.5 105h13.0v65h-13.0Z M260 121h34v49h-34Z M292 129h40v41h-40Z M302.0 112h20.0v58h-20.0Z M330 128h40v42h-40Z M368 95h34v75h-34Z M376.5 87h17.0v83h-17.0Z M400 127h34v43h-34Z M432 113h34v57h-34Z M464 103h30v67h-30Z M492 121h26v49h-26Z M498.5 111h13.0v59h-13.0Z M516 91h40v79h-40Z M526.0 74h20.0v96h-20.0Z M554 107h26v63h-26Z M578 94h26v76h-26Z M602 136h34v34h-34Z M610.5 122h17.0v48h-17.0Z M634 92h22v78h-22Z M654 114h30v56h-30Z M661.5 96h15.0v74h-15.0Z M682 92h18v78h-18Z M698 119h26v51h-26Z M722 109h34v61h-34Z M754 136h30v34h-30Z M782 110h26v60h-26Z M806 137h18v33h-18Z M822 99h26v71h-26Z M846 88h40v82h-40Z M884 116h40v54h-40Z M922 139h26v31h-26Z M946 130h26v40h-26Z M970 137h30v33h-30Z M977.5 125h15.0v45h-15.0Z M998 93h22v77h-22Z M1003.5 79h11.0v91h-11.0Z M1018 135h30v35h-30Z M1025.5 121h15.0v49h-15.0Z M1046 123h34v47h-34Z M1078 85h30v85h-30Z M1106 114h40v56h-40Z M1144 116h40v54h-40Z M1182 135h22v35h-22Z M1187.5 124h11.0v46h-11.0Z M1202 126h40v44h-40Z M1212.0 109h20.0v61h-20.0Z M1240 124h22v46h-22Z M1260 114h22v56h-22Z M1280 104h34v66h-34Z M1312 96h22v74h-22Z M1332 99h34v71h-34Z M1364 111h18v59h-18Z M1380 89h40v81h-40Z M1418 115h30v55h-30Z M470 66h66v104h-66Z M470 42h44v128h-44Z M492 32h44v138h-44Z M481 20h33v150h-33Z M484 2h2.5v18h-2.5Z M499 6h2.5v14h-2.5Z M820 42h34v128h-34Z M700 74h40v96h-40Z M705 54h30v116h-30Z M710 40h20v130h-20Z M718.5 10h3v30h-3Z M1000 170L1008 32L1040 32L1048 170Z M1013 6h2.5v26h-2.5Z M1033 6h2.5v26h-2.5Z M600 60h30v110h-30Z M640 78h26v92h-26Z M900 70h30v100h-30Z M1120 75h34v95h-34Z M330 72h30v98h-30Z M380 58h24v112h-24Z M1220 82h28v88h-28Z"/></symbol>
+</svg>
+
+<header class="site">
+  <div class="nav">
+    <a class="brand" href="#home">
+      <span class="mono">ΦΚΨ</span>
+      <span class="brand-text"><b>Chicago Alumni Association</b><span>Founders Day 2027</span></span>
+    </a>
+    <button class="menu-btn" id="menuBtn" aria-label="Menu" aria-expanded="false">Menu</button>
+    <nav class="links" id="navLinks">
+      <a href="#home" data-v="home">Home</a>
+      <a href="#register" data-v="register">Register</a>
+      <a href="#attendees" data-v="attendees">Who's Coming</a>
+      <a href="#awards" data-v="awards">Award Nominations</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<!-- ================= HOME ================= -->
+<div class="view" id="v-home">
+  <div class="hero">
+    <div class="hero-inner">
+      <div>
+        <div class="eyebrow">Founders Day 2027 · Chicago Alumni Association</div>
+        <h1>Our Story,<br><em>Our Future</em></h1>
+        <p class="tagline">175 Years of Phi Kappa Psi</p>
+        <p class="sub">Join brothers from every chapter and class for the Chicago Alumni Association's Founders Day luncheon as we celebrate the Fraternity's 175th.</p>
+        <a class="local-theme" href="#standard"><span>Chicago's theme this year</span><b>Phi Psi Now</b></a>
+        <div class="facts">
+          <div class="fact"><b>When</b><span data-c="dateShort"></span></div>
+          <div class="fact"><b>Where</b><span data-c="venueShort"></span></div>
+        </div>
+        <div class="ctas">
+          <a class="btn btn-red" href="#register">Register for the Luncheon</a>
+          <a class="btn btn-ghost" href="#awards">Nominate a Brother</a>
+        </div>
+      </div>
+      <div class="seal" aria-hidden="true">
+        <div>
+          <div class="lbl">Celebrating</div>
+          <div class="yrs">175</div>
+          <div class="lbl">Years</div>
+          <div class="span">1852 – 2027</div>
+          <div class="stars sm" style="margin-top:14px"><svg viewBox="-10 -10 20 20" aria-hidden="true"><path d="M0.00,-10.00 L2.00,-3.46 L8.66,-5.00 L4.00,0.00 L8.66,5.00 L2.00,3.46 L0.00,10.00 L-2.00,3.46 L-8.66,5.00 L-4.00,0.00 L-8.66,-5.00 L-2.00,-3.46Z"/></svg><svg viewBox="-10 -10 20 20" aria-hidden="true"><path d="M0.00,-10.00 L2.00,-3.46 L8.66,-5.00 L4.00,0.00 L8.66,5.00 L2.00,3.46 L0.00,10.00 L-2.00,3.46 L-8.66,5.00 L-4.00,0.00 L-8.66,-5.00 L-2.00,-3.46Z"/></svg><svg viewBox="-10 -10 20 20" aria-hidden="true"><path d="M0.00,-10.00 L2.00,-3.46 L8.66,-5.00 L4.00,0.00 L8.66,5.00 L2.00,3.46 L0.00,10.00 L-2.00,3.46 L-8.66,5.00 L-4.00,0.00 L-8.66,-5.00 L-2.00,-3.46Z"/></svg><svg viewBox="-10 -10 20 20" aria-hidden="true"><path d="M0.00,-10.00 L2.00,-3.46 L8.66,-5.00 L4.00,0.00 L8.66,5.00 L2.00,3.46 L0.00,10.00 L-2.00,3.46 L-8.66,5.00 L-4.00,0.00 L-8.66,-5.00 L-2.00,-3.46Z"/></svg></div>
+        </div>
+      </div>
+    </div>
+    <svg class="sky" viewBox="0 0 1440 170" preserveAspectRatio="none" aria-hidden="true"><use href="#skyline"/></svg>
+  </div>
+
+  <div class="countdown">
+    <div class="cd" id="cd">
+      <div class="stars"><svg viewBox="-10 -10 20 20" aria-hidden="true"><path d="M0.00,-10.00 L2.00,-3.46 L8.66,-5.00 L4.00,0.00 L8.66,5.00 L2.00,3.46 L0.00,10.00 L-2.00,3.46 L-8.66,5.00 L-4.00,0.00 L-8.66,-5.00 L-2.00,-3.46Z"/></svg><svg viewBox="-10 -10 20 20" aria-hidden="true"><path d="M0.00,-10.00 L2.00,-3.46 L8.66,-5.00 L4.00,0.00 L8.66,5.00 L2.00,3.46 L0.00,10.00 L-2.00,3.46 L-8.66,5.00 L-4.00,0.00 L-8.66,-5.00 L-2.00,-3.46Z"/></svg></div>
+      <div class="cd-label">Until we gather in Chicago</div>
+      <div class="cd-units">
+        <div class="cd-u"><b id="cdD">–</b><span>Days</span></div>
+        <div class="cd-u"><b id="cdH">–</b><span>Hours</span></div>
+        <div class="cd-u"><b id="cdM">–</b><span>Minutes</span></div>
+      </div>
+      <div class="stars"><svg viewBox="-10 -10 20 20" aria-hidden="true"><path d="M0.00,-10.00 L2.00,-3.46 L8.66,-5.00 L4.00,0.00 L8.66,5.00 L2.00,3.46 L0.00,10.00 L-2.00,3.46 L-8.66,5.00 L-4.00,0.00 L-8.66,-5.00 L-2.00,-3.46Z"/></svg><svg viewBox="-10 -10 20 20" aria-hidden="true"><path d="M0.00,-10.00 L2.00,-3.46 L8.66,-5.00 L4.00,0.00 L8.66,5.00 L2.00,3.46 L0.00,10.00 L-2.00,3.46 L-8.66,5.00 L-4.00,0.00 L-8.66,-5.00 L-2.00,-3.46Z"/></svg></div>
+    </div>
+  </div>
+
+  <section class="block">
+    <div class="wrap grid-2">
+      <div>
+        <div class="eyebrow">The Luncheon</div>
+        <h2 style="margin:10px 0 18px">Join us in Wrigleyville</h2>
+        <p class="lede">Every February, Phi Psis everywhere mark the founding of our Fraternity on February 19, 1852. This year Chicago-area alumni will celebrate the 175th with an afternoon of lunch, fellowship, and recognition of the brothers who carry the Fraternity forward.</p>
+        <p class="lede" style="margin-top:14px">Whatever your chapter or class year, and whether it's been two years or forty since you were last at an alumni event, you're welcome. Bring a brother.</p>
+        <div class="ctas" style="margin-top:28px">
+          <a class="btn btn-green" href="#attendees">See Who's Coming</a>
+        </div>
+      </div>
+      <div class="card">
+        <ul class="details">
+          <li><div class="k">Date</div><div class="v"><b data-c="dateLong"></b><span data-c="timeLine"></span></div></li>
+          <li><div class="k">Venue</div><div class="v"><b data-c="venue"></b><span data-c="venueLine"></span></div></li>
+          <li><div class="k">Tickets</div><div class="v"><b data-c="priceLine"></b><span data-c="priceNote"></span></div></li>
+          <li><div class="k">Attire</div><div class="v"><b data-c="attire"></b><span data-c="attireNote"></span></div></li>
+          <li><div class="k">RSVP By</div><div class="v"><b data-c="rsvpBy"></b></div></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" style="padding-top:0">
+    <div class="wrap">
+      <div class="speaker wide">
+        <div class="eyebrow">Featured Guest Speaker</div>
+        <div class="sp-row">
+          <img class="sp-photo" src="img/speaker.jpg" alt="Paul Oblon">
+          <div>
+            <h3>Paul Oblon</h3>
+            <div class="sp-title">National Vice President,<br>Phi Kappa Psi</div>
+            <div class="sp-chap">Purdue ’90</div>
+          </div>
+        </div>
+        <p>We're honored to welcome Brother Oblon to Chicago for the Fraternity's 175th Founders Day.</p>
+      </div>
+
+      <div class="grid-2" style="margin-top:64px">
+        <div>
+          <div class="eyebrow">The Afternoon</div>
+          <h2 style="margin:10px 0 16px">Program</h2>
+          <p class="lede">Three hours of fellowship, a Founders Day lunch, and recognition of the brothers setting the Chicago Standard.</p>
+        </div>
+        <ol class="sched">
+          <li><div class="t">1:00 PM</div><div><b>Networking Hour</b><span>Arrive, grab a drink, and catch up with brothers from across chapters and classes.</span></div></li>
+          <li><div class="t">2:00 PM</div><div><b>Lunch</b><span>Sit down together for the Founders Day meal.</span></div></li>
+          <li><div class="t">3:00 PM</div><div><b>Remarks &amp; Awards</b><span>Remarks from our featured speaker, brief remarks from chapter presidents, and presentation of this year's alumni awards.</span></div></li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <section class="block standard" id="standard">
+    <div class="wrap">
+      <div class="standard-head">
+        <div>
+          <div class="eyebrow">Chicago's Theme · Phi Psi Now</div>
+          <h2 style="margin-top:10px">The Chicago Standard</h2>
+        </div>
+        <p class="lede">Last year we said Phi Psi Forward. We restored traditions, started new ones, and put the tools in place. Now the work is here. These are our commitments for the year ahead, and the bar we're setting as we work to become the best alumni association in Phi Kappa Psi.</p>
+      </div>
+      <div class="grid-3">
+        <div class="commit"><div class="star-n"><svg viewBox="-10 -10 20 20" aria-hidden="true"><path d="M0.00,-10.00 L2.00,-3.46 L8.66,-5.00 L4.00,0.00 L8.66,5.00 L2.00,3.46 L0.00,10.00 L-2.00,3.46 L-8.66,5.00 L-4.00,0.00 L-8.66,-5.00 L-2.00,-3.46Z"/></svg><span>Commitment 1</span></div><h3>Programming That Helps Us Flourish</h3><p>Professional development for undergraduates and alumni alike, community service that puts the Great Joy of Serving Others into practice, and social events that build and strengthen the bonds of brotherhood.</p></div>
+        <div class="commit"><div class="star-n"><svg viewBox="-10 -10 20 20" aria-hidden="true"><path d="M0.00,-10.00 L2.00,-3.46 L8.66,-5.00 L4.00,0.00 L8.66,5.00 L2.00,3.46 L0.00,10.00 L-2.00,3.46 L-8.66,5.00 L-4.00,0.00 L-8.66,-5.00 L-2.00,-3.46Z"/></svg><span>Commitment 2</span></div><h3>From Chapter to Alumni</h3><p>Alumni showing up for the chapters across our area as mentors and advisors, keeping established alumni engaged, and making sure graduating seniors and young alumni find their place in the association from the day they graduate.</p></div>
+        <div class="commit"><div class="star-n"><svg viewBox="-10 -10 20 20" aria-hidden="true"><path d="M0.00,-10.00 L2.00,-3.46 L8.66,-5.00 L4.00,0.00 L8.66,5.00 L2.00,3.46 L0.00,10.00 L-2.00,3.46 L-8.66,5.00 L-4.00,0.00 L-8.66,-5.00 L-2.00,-3.46Z"/></svg><span>Commitment 3</span></div><h3>Engaged Across the Fraternity</h3><p>A Chicago that shows up for Phi Kappa Psi nationally: supporting fellow alumni associations, contributing to national committees, and championing the Fraternity's programs alongside its staff and leadership.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block band">
+    <div class="wrap grid-2" style="align-items:center">
+      <div>
+        <div class="stars left"><svg viewBox="-10 -10 20 20" aria-hidden="true"><path d="M0.00,-10.00 L2.00,-3.46 L8.66,-5.00 L4.00,0.00 L8.66,5.00 L2.00,3.46 L0.00,10.00 L-2.00,3.46 L-8.66,5.00 L-4.00,0.00 L-8.66,-5.00 L-2.00,-3.46Z"/></svg><svg viewBox="-10 -10 20 20" aria-hidden="true"><path d="M0.00,-10.00 L2.00,-3.46 L8.66,-5.00 L4.00,0.00 L8.66,5.00 L2.00,3.46 L0.00,10.00 L-2.00,3.46 L-8.66,5.00 L-4.00,0.00 L-8.66,-5.00 L-2.00,-3.46Z"/></svg><svg viewBox="-10 -10 20 20" aria-hidden="true"><path d="M0.00,-10.00 L2.00,-3.46 L8.66,-5.00 L4.00,0.00 L8.66,5.00 L2.00,3.46 L0.00,10.00 L-2.00,3.46 L-8.66,5.00 L-4.00,0.00 L-8.66,-5.00 L-2.00,-3.46Z"/></svg><svg viewBox="-10 -10 20 20" aria-hidden="true"><path d="M0.00,-10.00 L2.00,-3.46 L8.66,-5.00 L4.00,0.00 L8.66,5.00 L2.00,3.46 L0.00,10.00 L-2.00,3.46 L-8.66,5.00 L-4.00,0.00 L-8.66,-5.00 L-2.00,-3.46Z"/></svg></div>
+        <p class="quote">“The Great Joy of Serving Others.”</p>
+        <div class="quote-by">The founding ideal of Phi Kappa Psi</div>
+      </div>
+      <div>
+        <h2 style="margin-bottom:14px">Know a brother who deserves recognition?</h2>
+        <p class="lede">Nominations are open for this year's alumni awards, which will be presented at the luncheon.</p>
+        <div class="ctas" style="margin-top:24px"><a class="btn btn-red" href="#awards">Submit a Nomination</a></div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ================= REGISTER ================= -->
+<div class="view" id="v-register">
+  <div class="page-head"><div class="wrap">
+    <div class="eyebrow">Founders Day 2027</div>
+    <h1>Register</h1>
+    <p>Reserve your seat at the luncheon. Registration takes about two minutes.</p>
+  </div>
+  <svg class="sky" viewBox="0 0 1440 170" preserveAspectRatio="none" aria-hidden="true"><use href="#skyline"/></svg>
+  </div>
+  <section class="block">
+    <div class="wrap grid-2">
+      <div>
+        <h2 style="font-size:36px">How it works</h2>
+        <ol class="steps">
+          <li><b>Fill out the registration form</b><span>Your contact info, chapter and year of initiation, ticket type, and your guest's name if you're bringing one.</span></li>
+          <li><b>Complete payment</b><span data-c="payStep"></span></li>
+          <li><b>Watch for your confirmation</b><span>Once your registration is processed you'll appear on the <a href="#attendees">Who's Coming</a> list.</span></li>
+        </ol>
+      </div>
+      <div class="card" style="padding:34px">
+        <div class="eyebrow" style="margin-bottom:10px">Luncheon Ticket</div>
+        <div class="price" id="priceBig"></div>
+        <ul class="details" style="margin-top:18px">
+          <li><div class="k">When</div><div class="v"><b data-c="dateLong"></b><span data-c="timeLine"></span></div></li>
+          <li><div class="k">Where</div><div class="v"><b data-c="venue"></b><span data-c="venueLine"></span></div></li>
+          <li><div class="k">RSVP By</div><div class="v"><b data-c="rsvpBy"></b></div></li>
+        </ul>
+        <div style="margin-top:22px" id="regBtnWrap"></div>
+        <p class="note" data-c="contactLine"></p>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ================= ATTENDEES ================= -->
+<div class="view" id="v-attendees">
+  <div class="page-head"><div class="wrap">
+    <div class="eyebrow">Founders Day 2027</div>
+    <h1>Who's Coming</h1>
+    <p>Brothers registered for the luncheon so far. Find your pledge brothers, then send them the link.</p>
+  </div>
+  <svg class="sky" viewBox="0 0 1440 170" preserveAspectRatio="none" aria-hidden="true"><use href="#skyline"/></svg>
+  </div>
+  <section class="block">
+    <div class="wrap">
+      <div class="att-tools">
+        <div class="stat">
+          <div><b id="statBrothers">0</b><span>Brothers</span></div>
+          <div><b id="statChapters">0</b><span>Chapters</span></div>
+          <div><b id="statSeats">0</b><span>Total Seats</span></div>
+        </div>
+        <input type="search" id="attSearch" placeholder="Search by name, chapter, or year" aria-label="Search attendees">
+      </div>
+      <div id="attList" class="att-list"></div>
+      <div id="attEmpty" class="empty" style="display:none">
+        <h3>Registration is open</h3>
+        <p>No one's on the list yet. Be the first brother to claim a seat.</p>
+        <a class="btn btn-red" href="#register">Register Now</a>
+      </div>
+      <p class="updated" id="attUpdated"></p>
+    </div>
+  </section>
+</div>
+
+<!-- ================= AWARDS ================= -->
+<div class="view" id="v-awards">
+  <div class="page-head"><div class="wrap">
+    <div class="eyebrow">Founders Day 2027</div>
+    <h1>Award Nominations</h1>
+    <p>Recognize the brothers who make our Fraternity stronger. Awards will be presented at the Founders Day luncheon.</p>
+  </div>
+  <svg class="sky" viewBox="0 0 1440 170" preserveAspectRatio="none" aria-hidden="true"><use href="#skyline"/></svg>
+  </div>
+  <section class="block">
+    <div class="wrap">
+      <div class="deadline" id="deadlineBox"></div>
+      <div class="grid-3" id="awardGrid"></div>
+      <p class="note" style="margin-top:28px">Each nomination opens a Google Form in a new tab. You may nominate more than one brother, and self-nominations are welcome unless an award says otherwise.</p>
+    </div>
+  </section>
+</div>
+</main>
+
+<svg class="foot-sky" viewBox="0 0 1440 170" preserveAspectRatio="none" aria-hidden="true"><use href="#skyline"/></svg>
+<footer>
+  <div class="wrap">
+    <div><b>Chicago Alumni Association of Phi Kappa Psi</b><br>Founders Day Luncheon · <span data-c="dateShort"></span></div>
+    <div data-c="contactFooter"></div>
+  </div>
+</footer>
+
+<script>
+/* =====================================================================
+   EDIT HERE — everything event-specific lives in this block.
+   ===================================================================== */
+const CONFIG = {
+  eventStart: "2027-02-27T13:00:00-06:00",   // Chicago time
+  timeLine:   "1:00 – 4:00 PM Central",
+  venue:      "Brickhouse Tavern",
+  venueLine:  "Wrigleyville, Chicago",
+  price:      "$75 alumni · $50 undergraduates",
+  priceNote:  "Guests pay the same rate as the brother they attend with. Includes lunch and one drink ticket (21+).",
+  prices: [
+    { amount: "$75", label: "Alumni & their guests" },
+    { amount: "$50", label: "Undergraduates & their guests" }
+  ],
+  attire:     "Badge attire",
+  attireNote: "Coat and tie, with your badge",
+  rsvpBy:     "Sunday, January 31, 2027 · 11:59 PM CST",
+  payStep:    "The last page of the form has the Switch payment QR code and link. Pay for yourself and any guest there.",
+  registrationFormUrl: "https://forms.gle/FKY89nsfhWMW5ojHA",
+  contactName:  "Drew Hopson",
+  contactEmail: "hopson.james@gmail.com",
+  contactPhone: "219-928-8633",
+
+  nominationDeadline: "Sunday, January 31, 2027 at 11:59 PM CST",
+  awards: [
+    { who: "Alumni Award", name: "Alumnus of the Year",
+      desc: "Honors an alumnus whose service to the Fraternity, his chapter, or the Chicago community over the past year exemplifies the Great Joy of Serving Others.",
+      url: "https://forms.gle/qgaFBqSC1SLcaGdD7" },
+    { who: "Alumni Award", name: "Young Alumnus of the Year",
+      desc: "Recognizes a recent graduate who has stayed engaged with the Fraternity and is already making an impact as a volunteer, mentor, or leader.",
+      url: "https://forms.gle/FnmXf7qTEWcbT13A7" },
+    { who: "Alumni Award", name: "Distinguished Service Award",
+      desc: "Honors a brother whose sustained, dedicated service to Phi Kappa Psi, through his chapter, the alumni association, or the Fraternity at large, has made a lasting difference.",
+      url: "https://forms.gle/5Vyy5ssZ5PKbPHG78" }
+  ],
+
+  /* Attendee list: one line per registered brother.
+     { name: "First Last", chapter: "Illinois Delta", year: 2012, guests: 1 } */
+  attendees: [],
+  attendeesUpdated: ""       // e.g. "January 10, 2027"
+};
+/* ===================================================================== */
+
+const $ = s => document.querySelector(s);
+const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const TBD = '<span class="tbd">TBD</span>';
+
+const start = new Date(CONFIG.eventStart);
+const dateLong = start.toLocaleDateString("en-US",{weekday:"long",month:"long",day:"numeric",year:"numeric",timeZone:"America/Chicago"});
+const dateShort = start.toLocaleDateString("en-US",{weekday:"short",month:"short",day:"numeric",year:"numeric",timeZone:"America/Chicago"}) + " · 1–4 PM";
+
+const contact = CONFIG.contactEmail
+  ? `Questions? Contact ${esc(CONFIG.contactName || "the association")} at <a href="mailto:${esc(CONFIG.contactEmail)}">${esc(CONFIG.contactEmail)}</a>${CONFIG.contactPhone ? ` or ${esc(CONFIG.contactPhone)}` : ""}`
+  : `Questions? Reach out to the Chicago Alumni Association.`;
+
+const fills = {
+  dateLong, dateShort,
+  timeLine: CONFIG.timeLine,
+  venue: CONFIG.venue,
+  venueShort: `${CONFIG.venue}, ${CONFIG.venueLine.split(",")[0]}`,
+  venueLine: CONFIG.venueLine,
+  priceLine: CONFIG.price || null,
+  priceNote: CONFIG.priceNote,
+  attire: CONFIG.attire,
+  attireNote: CONFIG.attireNote,
+  rsvpBy: CONFIG.rsvpBy || null,
+  payStep: CONFIG.payStep,
+  contactLine: contact,
+  contactFooter: contact
+};
+const htmlKeys = new Set(["contactLine","contactFooter"]);
+document.querySelectorAll("[data-c]").forEach(el => {
+  const k = el.dataset.c, v = fills[k];
+  if (v === null || v === undefined || v === "") el.innerHTML = TBD;
+  else if (htmlKeys.has(k)) el.innerHTML = v;
+  else el.textContent = v;
+});
+
+$("#priceBig").innerHTML = CONFIG.prices && CONFIG.prices.length
+  ? CONFIG.prices.map(p=>`<div class="tier"><span class="amt">${esc(p.amount)}</span><span class="tl">${esc(p.label)}</span></div>`).join("") + `<p class="note" style="margin-top:12px">${esc(CONFIG.priceNote)}</p>`
+  : `${TBD}`;
+$("#regBtnWrap").innerHTML = CONFIG.registrationFormUrl
+  ? `<a class="btn btn-red" style="width:100%" href="${esc(CONFIG.registrationFormUrl)}" target="_blank" rel="noopener">Open Registration Form ↗</a>`
+  : `<span class="btn" aria-disabled="true" style="width:100%">Registration opens soon</span>`;
+
+/* ---------- Countdown ---------- */
+function tick(){
+  const ms = start - Date.now();
+  if (ms <= 0){ $("#cd").innerHTML = '<div class="cd-label">Happy Founders Day, brothers.</div>'; return; }
+  const d = Math.floor(ms/864e5), h = Math.floor(ms/36e5)%24, m = Math.floor(ms/6e4)%60;
+  $("#cdD").textContent = d; $("#cdH").textContent = h; $("#cdM").textContent = String(m).padStart(2,"0");
+}
+tick(); setInterval(tick, 30000);
+
+/* ---------- Attendees ---------- */
+function renderAttendees(q=""){
+  const all = [...CONFIG.attendees].sort((a,b)=>{
+    const la = a.name.trim().split(/\s+/).pop(), lb = b.name.trim().split(/\s+/).pop();
+    return la.localeCompare(lb) || a.name.localeCompare(b.name);
+  });
+  const chapters = new Set(all.map(a=>a.chapter).filter(Boolean));
+  $("#statBrothers").textContent = all.length;
+  $("#statChapters").textContent = chapters.size;
+  $("#statSeats").textContent = all.reduce((n,a)=>n+1+(+a.guests||0),0);
+  const t = q.trim().toLowerCase();
+  const shown = t ? all.filter(a=>`${a.name} ${a.chapter} ${a.year}`.toLowerCase().includes(t)) : all;
+  $("#attEmpty").style.display = all.length ? "none" : "block";
+  $("#attSearch").style.display = all.length ? "" : "none";
+  $("#attList").innerHTML = shown.map(a=>`
+    <div class="att"><b>${esc(a.name)}</b>
+      <span>${esc(a.chapter || "")}${a.chapter && a.year ? " · " : ""}${a.year ? "’" + String(a.year).slice(-2) : ""}</span>
+      ${+a.guests ? `<div class="g">+${+a.guests} guest${+a.guests>1?"s":""}</div>` : ""}
+    </div>`).join("") || (all.length ? `<p style="color:var(--muted)">No brothers match “${esc(q)}”.</p>` : "");
+  $("#attUpdated").textContent = all.length && CONFIG.attendeesUpdated ? `List updated ${CONFIG.attendeesUpdated}.` : "";
+}
+$("#attSearch").addEventListener("input", e=>renderAttendees(e.target.value));
+renderAttendees();
+
+/* ---------- Awards ---------- */
+$("#deadlineBox").innerHTML = `<strong>Nomination deadline:</strong>&nbsp;${CONFIG.nominationDeadline ? esc(CONFIG.nominationDeadline) : TBD}`;
+$("#awardGrid").innerHTML = CONFIG.awards.map(a=>`
+  <div class="award">
+    <div class="who">${esc(a.who)}</div>
+    <h3>${esc(a.name)}</h3>
+    <p>${esc(a.desc)}</p>
+    ${a.url
+      ? `<a class="btn btn-red" href="${esc(a.url)}" target="_blank" rel="noopener">Nominate ↗</a>`
+      : `<span class="btn" aria-disabled="true">Form coming soon</span>`}
+  </div>`).join("");
+
+/* ---------- Routing ---------- */
+const VIEWS = ["home","register","attendees","awards"];
+function route(){
+  const h = location.hash.replace("#","");
+  const v = VIEWS.includes(h) ? h : "home";
+  VIEWS.forEach(x=>$("#v-"+x).classList.toggle("on", x===v));
+  document.querySelectorAll("nav.links a").forEach(a=>a.classList.toggle("active", a.dataset.v===v));
+  $("#navLinks").classList.remove("open"); $("#menuBtn").setAttribute("aria-expanded","false");
+  const anchor = !VIEWS.includes(h) && h && document.getElementById(h);
+  if (anchor) anchor.scrollIntoView({behavior:"smooth"}); else window.scrollTo(0,0);
+}
+window.addEventListener("hashchange", route);
+route();
+$("#menuBtn").addEventListener("click", ()=>{
+  const o = $("#navLinks").classList.toggle("open");
+  $("#menuBtn").setAttribute("aria-expanded", String(o));
+});
+</script>
+</body>
+</html>
